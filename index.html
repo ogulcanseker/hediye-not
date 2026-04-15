@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Özel Bir Not...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            background-color: #ffe6e6; /* Yumuşak pembe bir ton */
+            background-image: linear-gradient(315deg, #ffe6e6 0%, #ffc1c1 74%);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            transition: all 0.5s ease;
+        }
+
+        #intro {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+        }
+
+        button:hover {
+            background-color: #ff3333;
+            transform: scale(1.05);
+        }
+
+        #note-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        .show-note {
+            display: block !important;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff4d4d;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .heart {
+            color: #ff4d4d;
+            font-size: 1.5rem;
+            animation: pulse 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div id="intro">
+            <h1>Hediyenin yanında bir detay eksik kalmıştı... 👜</h1>
+            <button onclick="revealNote()">Notu Oku <span class="heart">❤️</span></button>
+        </div>
+
+        <div id="note-content">
+            <h2 class="greeting">Selinim,</h2>
+            <p>Not ekletemedim o yüzden böyle bir şey yapmak istedim</p>
+            <p>Senin için düşünceli günler olduğunun fakrındayım ama her zaman yanında olduğumu ve olacağımı bilmeni istiyorum. Umarım hediyeni çok seversin ve onu her taktığında seni ne kadar çok sevdiğimi hatırlarsın.  Güzel günlerde, hep birlikte kullanman dileğiyle...</p>
+            <p style="margin-top: 25px; font-weight: bold; color: #333;">Seni çok seviyorum!</p>
+        </div>
+    </div>
+
+    <script>
+        function revealNote() {
+            document.getElementById('intro').style.display = 'none';
+            const note = document.getElementById('note-content');
+            note.classList.add('show-note');
+        }
+    </script>
+
+</body>
+</html>
